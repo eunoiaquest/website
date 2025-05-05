@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
             <div className="space-y-4 text-muted-foreground">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <span>123 Assessment Ave, Suite 100<br />DiagnoCity, TX 75001</span>
+                <span>Göttingen, 37073, Lower Saxonny<br /></span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
@@ -131,7 +131,7 @@ const ContactSection: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                 <span>+1 (555) 123-4567</span> {/* Placeholder phone */}
+                 <span>+49 15238910716</span> {/* Placeholder phone */}
               </div>
             </div>
             {/* Optional: Add a map embed here */}
