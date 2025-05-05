@@ -9,21 +9,21 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const teamMembers = [
   {
-    name: 'Dr. Evelyn Reed',
-    role: 'CEO & Lead Scientist',
-    imageUrl: 'https://picsum.photos/id/1005/200/200', // Placeholder
+    name: 'Sara Ahmadi Majd',
+    role: 'Co-Founder & Lead Scientist',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQH1Zu1s_vii6A/profile-displayphoto-shrink_800_800/B4EZS9CZufG0Ac-/0/1738338312004?e=1752105600&v=beta&t=vZrddTKln15olf1yGYNsnu6OnoX12JBCEK5FEakIquo', // Placeholder
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/sara-ahmadi-majd-594244153/',
       twitter: '#',
     },
     aiHint: 'professional woman headshot',
   },
   {
-    name: 'Alex Chen',
-    role: 'Head of Game Development',
-    imageUrl: 'https://picsum.photos/id/1011/200/200', // Placeholder
+    name: 'Alex (M.H.) Emami',
+    role: 'Co-Founder & CTO',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQFJ5upIJ4jCpQ/profile-displayphoto-shrink_800_800/B4EZQnevYeGYAg-/0/1735829158595?e=1752105600&v=beta&t=ssGHzGMAgX9vMYDRZOYPtazSWTMT0SFG65uySLzRiHY', // Placeholder
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/alex-emami/',
       twitter: '#',
     },
      aiHint: 'professional man headshot',

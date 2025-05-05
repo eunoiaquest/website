@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
           Welcome to Eunoia
         </h1>
         <p className="mt-3 max-w-md mx-auto text-lg text-muted-foreground sm:text-xl md:mt-5 md:max-w-3xl">
-          Video-Gamified Assessments on your platform.
+          Video-Gamified assessments on your platform.
         </p>
         <div className="mt-10 flex justify-center">
           <Button asChild size="lg">

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     { href: '#', icon: Facebook, label: 'Facebook' },
     { href: '#', icon: Twitter, label: 'Twitter' },
     { href: '#', icon: Instagram, label: 'Instagram' },
-    { href: '#', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'https://www.linkedin.com/company/eunoiaquest', icon: Linkedin, label: 'LinkedIn' },
   ];
 
   return (
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
 
         {/* Contact Info */}
         <div className="text-sm flex flex-col md:flex-row md:space-x-4">
-           <span>123 Assessment Ave, Suite 100, DiagnoCity, TX 75001</span> {/* Placeholder Address */}
+           <span>Göttingen, 37073, Lower Saxonny, </span> {/* Placeholder Address */}
            <a href="mailto:contact@eunoiaquest.com" className="hover:text-primary transition-colors">
              contact@eunoiaquest.com
            </a>
