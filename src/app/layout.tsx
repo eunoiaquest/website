@@ -14,7 +14,7 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title: 'Eunoia Quest',
-  description: 'Video-Gamified assessments on your platform',
+  description: 'Gamified Mental Health Screening Platform',
 };
 
 export default function RootLayout({
