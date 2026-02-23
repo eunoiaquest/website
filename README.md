@@ -1,57 +1,50 @@
-# Eunoia Quest Landing Page
+# Eunoia Quest — Marketing Website
 
-A Next.js 15 landing page for "Eunoia Quest" - a video-gamified assessment platform.
+Static marketing website for **Eunoia Quest**, a video-gamified assessment platform.
 
-## How to Build
+## Tech Stack
 
-### Prerequisites
-- Node.js 20.x or higher
-- npm (comes with Node.js)
+- **[Astro](https://astro.build/)** — Static site generator
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling
+- **Vanilla JS** — Scroll animations, mobile menu, header effects (zero frameworks)
 
-### Installation & Build
+## Development
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Build for production:**
-   ```bash
-   npm run build
-   ```
-   
-   This creates an optimized production build with standalone output for Docker deployment.
-
-3. **Run production build locally:**
-   ```bash
-   npm run start
-   ```
-
-### Development
-
-Run the development server with Turbopack:
 ```bash
-npm run dev
+npm install        # Install dependencies
+npm run dev        # Start dev server (http://localhost:4321)
+npm run build      # Production build → dist/
+npm run preview    # Preview production build locally
 ```
 
-The app will be available at [http://localhost:9002](http://localhost:9002) (custom port).
+## Deployment
 
-### Environment Variables
+Automatic via **GitHub Pages**. Every push to `main` triggers the workflow at `.github/workflows/deploy.yml` which builds and deploys to Pages.
 
-Create a `.env.local` file for local development:
-```bash
-GOOGLE_GENAI_API_KEY=your_api_key_here
+To configure:
+1. Go to **Settings → Pages** in your GitHub repo
+2. Set source to **GitHub Actions**
+
+## Project Structure
+
+```
+src/
+  layouts/          BaseLayout.astro (HTML shell, fonts, head)
+  pages/            index.astro (main landing page)
+  components/
+    Header.astro    Sticky nav with mobile menu (vanilla JS)
+    Footer.astro    Footer with social links
+    AnimatedSection.astro   IntersectionObserver scroll animations
+    sections/
+      HeroSection.astro
+      AboutSection.astro
+      FeaturesSection.astro
+      TeamSection.astro
+      ContactSection.astro
+  styles/
+    global.css      CSS variables, Tailwind directives, base styles
 ```
 
-### Docker Deployment
+## Archive
 
-For containerized deployment:
-```bash
-docker-compose up -d
-```
-
-See [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md) for detailed Docker setup instructions.
-
----
-
-To get started with development, explore [src/app/page.tsx](src/app/page.tsx).
+The `Archive/` folder contains the previous Next.js implementation for reference.
