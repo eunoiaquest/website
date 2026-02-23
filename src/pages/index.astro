@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnimatedSection from '../components/AnimatedSection.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import AboutSection from '../components/sections/AboutSection.astro';
+import FeaturesSection from '../components/sections/FeaturesSection.astro';
+import TeamSection from '../components/sections/TeamSection.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+---
+
+<BaseLayout>
+  <AnimatedSection animation="fade-in">
+    <HeroSection />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <AboutSection />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <FeaturesSection />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <TeamSection />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <ContactSection />
+  </AnimatedSection>
+</BaseLayout>

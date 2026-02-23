@@ -1,0 +1,92 @@
+---
+const teamMembers = [
+  {
+    name: 'Sara Ahmadi Majd',
+    role: 'Co-Founder & Lead Scientist',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQH1Zu1s_vii6A/profile-displayphoto-shrink_800_800/B4EZS9CZufG0Ac-/0/1738338312004?e=1752105600&v=beta&t=vZrddTKln15olf1yGYNsnu6OnoX12JBCEK5FEakIquo',
+    initials: 'SA',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/sara-ahmadi-majd-594244153/',
+      twitter: '#',
+    },
+  },
+  {
+    name: 'Alex (M.H.) Emami',
+    role: 'Co-Founder & CTO',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQFJ5upIJ4jCpQ/profile-displayphoto-shrink_800_800/B4EZQnevYeGYAg-/0/1735829158595?e=1752105600&v=beta&t=ssGHzGMAgX9vMYDRZOYPtazSWTMT0SFG65uySLzRiHY',
+    initials: 'AE',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/alex-emami/',
+      twitter: '#',
+    },
+  },
+];
+
+// Lucide icon SVG paths
+const linkedinIcon = '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle>';
+const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>';
+---
+
+<section id="team" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+        Meet Our Team
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
+        The minds behind Eunoia's innovative assessment solutions.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center max-w-3xl mx-auto">
+      {teamMembers.map((member) => (
+        <div class="text-center bg-transparent flex flex-col items-center pt-6 space-y-4">
+          <!-- Avatar -->
+          <div class="relative h-32 w-32 mb-4 rounded-full border-4 border-primary/20 shadow-sm overflow-hidden bg-muted">
+            <img
+              src={member.imageUrl}
+              alt={member.name}
+              class="h-full w-full object-cover"
+              loading="lazy"
+              onerror={`this.style.display='none'; this.nextElementSibling.style.display='flex';`}
+            />
+            <span
+              class="absolute inset-0 items-center justify-center text-2xl font-quicksand-medium text-muted-foreground bg-muted hidden"
+              style="font-weight:500; display:none;"
+            >
+              {member.initials}
+            </span>
+          </div>
+
+          <h3 class="text-xl font-quicksand-medium text-foreground" style="font-weight:500;">{member.name}</h3>
+          <p class="text-primary font-semibold">{member.role}</p>
+
+          <!-- Social Links -->
+          <div class="flex space-x-3 pt-2">
+            {member.social.linkedin && (
+              <a
+                href={member.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} LinkedIn`}
+                class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={linkedinIcon} />
+              </a>
+            )}
+            {member.social.twitter && (
+              <a
+                href={member.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} Twitter`}
+                class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={twitterIcon} />
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
