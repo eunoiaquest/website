@@ -1,8 +1,16 @@
 ---
-const teamMembers = [
+interface Props {
+  t: {
+    heading: string;
+    subheading: string;
+    members: { name: string; role: string }[];
+  };
+}
+const { t } = Astro.props;
+
+// Fixed non-translatable data: images, initials, social links
+const memberData = [
   {
-    name: 'Sara Ahmadi Majd',
-    role: 'Co-Founder & Lead Scientist',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQH1Zu1s_vii6A/profile-displayphoto-shrink_800_800/B4EZS9CZufG0Ac-/0/1738338312004?e=1773878400&v=beta&t=yY3Z6YSQp3ib-7ONgNujgJiLqGl0UsXvz3OoPLps8jk',
     initials: 'SA',
     social: {
@@ -11,8 +19,6 @@ const teamMembers = [
     },
   },
   {
-    name: 'Alex (M.H.) Emami',
-    role: 'Co-Founder & CTO',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQFJ5upIJ4jCpQ/profile-displayphoto-shrink_800_800/B4EZQnevYeGYAg-/0/1735829158595?e=1773878400&v=beta&t=Q7k02iRkVr1PGR_74oF27cUSpA0z-xunialqAr_TIj0',
     initials: 'AE',
     social: {
@@ -31,19 +37,21 @@ const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 
   <div class="container mx-auto px-4 md:px-6">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
-        Meet Our Team
+        {t.heading}
       </h2>
       <p class="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-        The minds behind Eunoia's innovative assessment solutions.
+        {t.subheading}
       </p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center max-w-3xl mx-auto">
-      {teamMembers.map((member) => (
+      {t.members.map((member, i) => {
+        const data = memberData[i];
+        return (
         <div class="text-center bg-transparent flex flex-col items-center pt-6 space-y-4">
           <!-- Avatar -->
           <div class="relative h-32 w-32 mb-4 rounded-full border-4 border-primary/20 shadow-sm overflow-hidden bg-muted">
             <img
-              src={member.imageUrl}
+              src={data.imageUrl}
               alt={member.name}
               class="h-full w-full object-cover"
               loading="lazy"
@@ -53,7 +61,7 @@ const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 
               class="absolute inset-0 items-center justify-center text-2xl font-quicksand-medium text-muted-foreground bg-muted hidden"
               style="font-weight:500; display:none;"
             >
-              {member.initials}
+              {data.initials}
             </span>
           </div>
 
@@ -62,9 +70,9 @@ const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 
 
           <!-- Social Links -->
           <div class="flex space-x-3 pt-2">
-            {member.social.linkedin && (
+            {data.social.linkedin && (
               <a
-                href={member.social.linkedin}
+                href={data.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${member.name} LinkedIn`}
@@ -73,9 +81,9 @@ const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={linkedinIcon} />
               </a>
             )}
-            {member.social.twitter && (
+            {data.social.twitter && (
               <a
-                href={member.social.twitter}
+                href={data.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${member.name} Twitter`}
@@ -86,7 +94,8 @@ const twitterIcon = '<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 
             )}
           </div>
         </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

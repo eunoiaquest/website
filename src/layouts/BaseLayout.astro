@@ -2,20 +2,24 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { translations, type Lang } from '../i18n/translations';
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Lang;
 }
 
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
 const {
-  title = 'eunoia Quest',
-  description = 'Gamified Mental Health Screening Platform on your platform.',
+  title = t.meta.title,
+  description = t.meta.description,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,10 +49,10 @@ const {
     />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
-    <Header />
+    <Header navLinks={t.header.nav} langSwitcher={t.header.langSwitcher} menuOpenLabel={t.header.menuOpenLabel} menuCloseLabel={t.header.menuCloseLabel} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer allRightsReserved={t.footer.allRightsReserved} address={t.footer.address} />
   </body>
 </html>
