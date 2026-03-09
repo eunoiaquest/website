@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AnimatedSection from '../../components/AnimatedSection.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import AboutSection from '../../components/sections/AboutSection.astro';
+import FeaturesSection from '../../components/sections/FeaturesSection.astro';
+import TeamSection from '../../components/sections/TeamSection.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+import { translations } from '../../i18n/translations';
+
+const t = translations.de;
+---
+
+<BaseLayout lang="de" title={t.meta.title} description={t.meta.description}>
+  <AnimatedSection animation="fade-in">
+    <HeroSection t={t.hero} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <AboutSection t={t.about} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <FeaturesSection t={t.features} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <TeamSection t={t.team} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <ContactSection t={t.contact} />
+  </AnimatedSection>
+</BaseLayout>

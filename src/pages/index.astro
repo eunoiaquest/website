@@ -6,26 +6,29 @@ import AboutSection from '../components/sections/AboutSection.astro';
 import FeaturesSection from '../components/sections/FeaturesSection.astro';
 import TeamSection from '../components/sections/TeamSection.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
+import { translations } from '../i18n/translations';
+
+const t = translations.en;
 ---
 
-<BaseLayout>
+<BaseLayout lang="en" title={t.meta.title} description={t.meta.description}>
   <AnimatedSection animation="fade-in">
-    <HeroSection />
+    <HeroSection t={t.hero} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <AboutSection />
+    <AboutSection t={t.about} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <FeaturesSection />
+    <FeaturesSection t={t.features} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <TeamSection />
+    <TeamSection t={t.team} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <ContactSection />
+    <ContactSection t={t.contact} />
   </AnimatedSection>
 </BaseLayout>

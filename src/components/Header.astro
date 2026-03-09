@@ -1,11 +1,17 @@
 ---
-const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#features', label: 'Features' },
-  { href: '#team', label: 'Team' },
-  { href: '#contact', label: 'Contact' },
-];
+interface Props {
+  navLinks: { href: string; label: string }[];
+  langSwitcher: { label: string; href: string };
+  menuOpenLabel?: string;
+  menuCloseLabel?: string;
+}
+
+const {
+  navLinks,
+  langSwitcher,
+  menuOpenLabel = 'Open menu',
+  menuCloseLabel = 'Close menu',
+} = Astro.props;
 ---
 
 <header
@@ -19,7 +25,7 @@ const navLinks = [
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex space-x-6">
+    <nav class="hidden md:flex items-center space-x-6">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -29,13 +35,20 @@ const navLinks = [
           {link.label}
         </a>
       ))}
+      <a
+        href={langSwitcher.href}
+        class="text-sm font-quicksand-medium text-primary border border-primary/40 rounded px-2 py-0.5 hover:bg-primary/10 transition-colors"
+        style="font-weight:500;"
+      >
+        {langSwitcher.label}
+      </a>
     </nav>
 
     <!-- Mobile Menu Button -->
     <button
       id="mobile-menu-btn"
       class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted transition-colors"
-      aria-label="Open menu"
+      aria-label={menuOpenLabel}
     >
       <!-- Menu icon (hamburger) -->
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -64,7 +77,7 @@ const navLinks = [
       <button
         id="mobile-close-btn"
         class="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted transition-colors"
-        aria-label="Close menu"
+        aria-label={menuCloseLabel}
       >
         <!-- X icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -84,6 +97,13 @@ const navLinks = [
           {link.label}
         </a>
       ))}
+      <a
+        href={langSwitcher.href}
+        class="text-lg font-quicksand-medium text-primary border border-primary/40 rounded px-3 py-1 hover:bg-primary/10 transition-colors self-start"
+        style="font-weight:500;"
+      >
+        {langSwitcher.label}
+      </a>
     </nav>
   </div>
 </header>
