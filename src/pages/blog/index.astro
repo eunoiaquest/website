@@ -1,0 +1,43 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogPostCard from '../../components/blog/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+import { translations } from '../../i18n/translations';
+
+const t = translations.en;
+
+const allPosts = await getCollection('blog');
+const enPosts = allPosts
+  .filter((post) => post.id.startsWith('en/'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BlogLayout lang="en" title={t.blog.title} description={t.blog.description}>
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+          {t.blog.heading}
+        </h1>
+        <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          {t.blog.subheading}
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {enPosts.map((post) => {
+          const slug = post.id.replace('en/', '');
+          return (
+            <BlogPostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              author={post.data.author}
+              slug={slug}
+              image={post.data.image}
+            />
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BlogLayout>

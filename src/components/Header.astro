@@ -1,7 +1,7 @@
 ---
 interface Props {
   navLinks: { href: string; label: string }[];
-  langSwitcher: { label: string; href: string };
+  langSwitcher?: { label: string; href: string };
   menuOpenLabel?: string;
   menuCloseLabel?: string;
 }
@@ -35,13 +35,15 @@ const {
           {link.label}
         </a>
       ))}
-      <a
-        href={langSwitcher.href}
-        class="text-sm font-quicksand-medium text-primary border border-primary/40 rounded px-2 py-0.5 hover:bg-primary/10 transition-colors"
-        style="font-weight:500;"
-      >
-        {langSwitcher.label}
-      </a>
+      {langSwitcher && (
+        <a
+          href={langSwitcher.href}
+          class="text-sm font-quicksand-medium text-primary border border-primary/40 rounded px-2 py-0.5 hover:bg-primary/10 transition-colors"
+          style="font-weight:500;"
+        >
+          {langSwitcher.label}
+        </a>
+      )}
     </nav>
 
     <!-- Mobile Menu Button -->
@@ -97,13 +99,15 @@ const {
           {link.label}
         </a>
       ))}
-      <a
-        href={langSwitcher.href}
-        class="text-lg font-quicksand-medium text-primary border border-primary/40 rounded px-3 py-1 hover:bg-primary/10 transition-colors self-start"
-        style="font-weight:500;"
-      >
-        {langSwitcher.label}
-      </a>
+      {langSwitcher && (
+        <a
+          href={langSwitcher.href}
+          class="text-lg font-quicksand-medium text-primary border border-primary/40 rounded px-3 py-1 hover:bg-primary/10 transition-colors self-start"
+          style="font-weight:500;"
+        >
+          {langSwitcher.label}
+        </a>
+      )}
     </nav>
   </div>
 </header>
