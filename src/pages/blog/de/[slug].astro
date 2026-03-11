@@ -1,0 +1,83 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { translations } from '../../../i18n/translations';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const dePosts = allPosts.filter((post) => post.id.startsWith('de/'));
+
+  return dePosts.map((post) => {
+    const slug = post.id.replace('de/', '');
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { slug } = Astro.params;
+const t = translations.de;
+
+const { Content } = await render(post);
+
+const formattedDate = post.data.date.toLocaleDateString('de-DE', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BlogLayout lang="de" title={`${post.data.title} — eunoia Quest`} description={post.data.description}>
+  <article class="py-16 md:py-24 bg-background">
+    <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+      <!-- Back link -->
+      <a href="/blog/" class="text-primary hover:underline transition-colors text-sm mb-8 inline-block">
+        {t.blog.backToBlog}
+      </a>
+
+      <!-- Header -->
+      <header class="mb-8">
+        <h1 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl mb-4" style="font-weight:500;">
+          {post.data.title}
+        </h1>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+          <span>{t.blog.by} {post.data.author}</span>
+          <span>·</span>
+          <time datetime={post.data.date.toISOString().split('T')[0]}>
+            {t.blog.publishedOn} {formattedDate}
+          </time>
+        </div>
+
+        <a
+          href={`/blog/${slug}/`}
+          class="inline-flex items-center gap-2 mt-4 text-sm font-quicksand-medium text-primary border border-primary/40 rounded px-3 py-1.5 hover:bg-primary/10 transition-colors"
+          style="font-weight:500;"
+        >
+          {t.blog.readInEnglish}
+        </a>
+      </header>
+
+      {post.data.image && (
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="w-full rounded-lg mb-8 shadow-sm"
+          loading="lazy"
+        />
+      )}
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none
+        prose-headings:font-quicksand-medium prose-headings:text-foreground
+        prose-p:text-muted-foreground prose-p:leading-relaxed
+        prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-foreground
+        prose-li:text-muted-foreground
+        prose-blockquote:border-primary/40 prose-blockquote:text-muted-foreground">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BlogLayout>
