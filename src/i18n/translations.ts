@@ -28,8 +28,30 @@ export const translations = {
     about: {
       heading: 'Our Mission',
       body: "At eunoia Quest, we're revolutionizing mental health assessments through engaging video games. Our mission is to provide accurate, unbiased, and enjoyable screening experiences, making the process less stressful and more insightful for everyone involved.",
+      foundingStoryTitle: 'How We Started',
+      foundingStoryBody: "eunoia Quest grew from academic research at the University of Gottingen. Built on Sara Ahmadi Majd's master's thesis and shaped through the Lift-Off startup competition, we transformed a research concept into a practical screening product for real clinical and institutional use.",
       learnMore: 'Learn More',
       imageAlt: 'eunoia Quest platform illustration',
+    },
+    problem: {
+      heading: 'Why This Matters',
+      subheading: 'Mental health disorders are widespread, but initial screening remains one of the largest bottlenecks in care delivery.',
+      stats: [
+        {
+          value: '1 in 8',
+          label: 'people worldwide live with a mental disorder.',
+        },
+        {
+          value: 'Up to 70%',
+          label: 'of cases remain undiagnosed and untreated.',
+        },
+      ],
+      bottleneckTitle: 'Diagnosis Is the Bottleneck',
+      bottleneckPoints: [
+        'Initial diagnosis is still mostly manual, time-intensive, and difficult to scale.',
+        'Psychotherapists often spend much longer than planned on first-round screening.',
+        'Patients can face waiting lists of several months before receiving structured assessment.',
+      ],
     },
     features: {
       heading: 'Why Choose Eunoia?',
@@ -50,6 +72,61 @@ export const translations = {
         {
           title: 'Secure & Private',
           description: 'Your data is protected with industry-standard security measures.',
+        },
+      ],
+    },
+    howItWorks: {
+      heading: 'How It Works',
+      subheading: 'A serious game workflow that turns early screening into a structured, engaging, and data-informed process.',
+      steps: [
+        {
+          title: 'Play Scenario-Based Assessments',
+          description: 'Participants interact with realistic social scenarios in an engaging game-like format.',
+        },
+        {
+          title: 'Capture Multi-Modal Signals',
+          description: 'The platform captures responses, voice, and interaction behavior during the session.',
+        },
+        {
+          title: 'Process Data Securely',
+          description: 'Encrypted, anonymized data is processed with AI and machine learning models in the background.',
+        },
+        {
+          title: 'Deliver Structured Reports',
+          description: 'Clinics and professionals receive standardized screening outputs to support faster intake decisions.',
+        },
+      ],
+      note: 'Final clinical assessment remains with licensed professionals.',
+      integration: 'eunoia Quest is embeddable and can be integrated into existing customer platforms via secure APIs.',
+    },
+    science: {
+      heading: 'Backed by Scientific Research',
+      subheading: 'Our approach is grounded in peer-reviewed work and validated through real study settings.',
+      highlights: [
+        'The core methodology was presented at IROS24 in Abu Dhabi.',
+        'The study focused on screening Social Anxiety Disorder through multimedia scenario-based assessment.',
+        'Machine learning classifiers were trained to identify patterns and support accurate early screening.',
+      ],
+      paperTitle: 'Published Scientific Paper',
+      paperVenue: 'Ahmadi Majd et al., Frontiers in Robotics and AI (2025)',
+      paperLinkText: 'Read the Paper',
+      paperLink: 'https://doi.org/10.3389/frobt.2025.1620609',
+    },
+    audience: {
+      heading: 'Who It Is For',
+      subheading: 'Built for organizations that need scalable, structured, and clinically responsible early screening.',
+      segments: [
+        {
+          title: 'Clinics & Therapy Centers',
+          description: 'Standardize intake screening and reduce staff burden while preserving clinical oversight.',
+        },
+        {
+          title: 'Universities',
+          description: 'Support student mental health services with engaging and structured first-line assessment tools.',
+        },
+        {
+          title: 'Research Labs',
+          description: 'Collect structured behavioral and interaction data for studies in psychology and digital health.',
         },
       ],
     },
@@ -115,8 +192,30 @@ export const translations = {
     about: {
       heading: 'Unsere Mission',
       body: 'Bei eunoia Quest revolutionieren wir psychische Gesundheitsassessments durch fesselnde Videospiele. Unsere Mission ist es, genaue, vorurteilsfreie und angenehme Screening-Erfahrungen zu bieten, die den Prozess für alle Beteiligten weniger stressig und aufschlussreicher gestalten.',
+      foundingStoryTitle: 'Unsere Entstehung',
+      foundingStoryBody: 'eunoia Quest entstand aus akademischer Forschung an der Universitat Gottingen. Auf Basis von Sara Ahmadi Majds Masterarbeit und weiterentwickelt im Lift-Off Wettbewerb wurde aus einer wissenschaftlichen Idee ein praxisnahes Screening-Produkt fur Kliniken und Institutionen.',
       learnMore: 'Mehr erfahren',
       imageAlt: 'eunoia Quest Plattform-Illustration',
+    },
+    problem: {
+      heading: 'Warum das wichtig ist',
+      subheading: 'Psychische Erkrankungen sind weit verbreitet, doch gerade das erste Screening bleibt ein zentrales Nadelöhr der Versorgung.',
+      stats: [
+        {
+          value: '1 von 8',
+          label: 'Menschen weltweit lebt mit einer psychischen Erkrankung.',
+        },
+        {
+          value: 'Bis zu 70%',
+          label: 'der Falle bleiben unerkannt und unbehandelt.',
+        },
+      ],
+      bottleneckTitle: 'Diagnostik ist das Nadelöhr',
+      bottleneckPoints: [
+        'Die Erstdiagnostik ist oft weiterhin manuell, zeitaufwandig und schwer skalierbar.',
+        'Psychotherapeutinnen und Psychotherapeuten verbringen bei Erstscreenings oft deutlich mehr Zeit als geplant.',
+        'Patientinnen und Patienten warten haufig mehrere Monate auf eine strukturierte Erstabklarung.',
+      ],
     },
     features: {
       heading: 'Warum Eunoia wählen?',
@@ -137,6 +236,61 @@ export const translations = {
         {
           title: 'Sicher & Privat',
           description: 'Ihre Daten sind durch branchenübliche Sicherheitsmaßnahmen geschützt.',
+        },
+      ],
+    },
+    howItWorks: {
+      heading: 'So funktioniert es',
+      subheading: 'Ein Serious-Game-Ansatz, der fruhes Screening in einen strukturierten und engagierenden Prozess verwandelt.',
+      steps: [
+        {
+          title: 'Szenariobasierte Assessments spielen',
+          description: 'Teilnehmende interagieren in realitatsnahen sozialen Szenarien im Stil eines Videospiels.',
+        },
+        {
+          title: 'Multi-modale Signale erfassen',
+          description: 'Die Plattform erfasst Antworten, Stimme und Interaktionsverhalten wahrend der Sitzung.',
+        },
+        {
+          title: 'Daten sicher verarbeiten',
+          description: 'Verschlusselte und anonymisierte Daten werden im Hintergrund mit KI- und ML-Modellen verarbeitet.',
+        },
+        {
+          title: 'Strukturierte Berichte liefern',
+          description: 'Kliniken und Fachkrafte erhalten standardisierte Screening-Ergebnisse fur schnellere Entscheidungen.',
+        },
+      ],
+      note: 'Die abschließende klinische Beurteilung bleibt bei lizenzierten Fachpersonen.',
+      integration: 'eunoia Quest ist als eingebettete Losung konzipiert und kann uber sichere APIs in bestehende Plattformen integriert werden.',
+    },
+    science: {
+      heading: 'Wissenschaftlich fundiert',
+      subheading: 'Unser Ansatz basiert auf begutachteter Forschung und wurde in realen Studiensettings validiert.',
+      highlights: [
+        'Die Kernmethodik wurde auf der IROS24 in Abu Dhabi vorgestellt.',
+        'Die Studie fokussierte das Screening der Sozialen Angststorung mit multimedialen, szenariobasierten Assessments.',
+        'Machine-Learning-Klassifikatoren wurden trainiert, um Muster zu erkennen und fruhes Screening zu unterstutzen.',
+      ],
+      paperTitle: 'Veroffentlichte wissenschaftliche Arbeit',
+      paperVenue: 'Ahmadi Majd et al., Frontiers in Robotics and AI (2025)',
+      paperLinkText: 'Zur Publikation',
+      paperLink: 'https://doi.org/10.3389/frobt.2025.1620609',
+    },
+    audience: {
+      heading: 'Fur wen es gedacht ist',
+      subheading: 'Entwickelt fur Organisationen, die skalierbares, strukturiertes und klinisch verantwortbares Erstscreening brauchen.',
+      segments: [
+        {
+          title: 'Kliniken & Therapiezentren',
+          description: 'Erstscreenings standardisieren, Personal entlasten und klinische Verantwortung beibehalten.',
+        },
+        {
+          title: 'Universitaten',
+          description: 'Psychische Gesundheitsangebote fur Studierende mit strukturierten Erstabklarungs-Tools unterstutzen.',
+        },
+        {
+          title: 'Forschungslabore',
+          description: 'Strukturierte Verhaltens- und Interaktionsdaten fur Studien in Psychologie und Digital Health gewinnen.',
         },
       ],
     },

@@ -3,6 +3,8 @@ interface Props {
   t: {
     heading: string;
     body: string;
+    foundingStoryTitle: string;
+    foundingStoryBody: string;
     learnMore: string;
     imageAlt: string;
   };
@@ -32,6 +34,14 @@ const { t } = Astro.props;
         <p class="text-lg text-muted-foreground leading-relaxed">
           {t.body}
         </p>
+        <div class="rounded-lg border border-border bg-secondary/40 p-5">
+          <h3 class="text-xl font-quicksand-medium text-foreground mb-2" style="font-weight:500;">
+            {t.foundingStoryTitle}
+          </h3>
+          <p class="text-base text-muted-foreground leading-relaxed">
+            {t.foundingStoryBody}
+          </p>
+        </div>
         <a href="#about" class="text-primary hover:underline transition-colors inline-block">
           {t.learnMore}
         </a>

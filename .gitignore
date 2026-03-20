@@ -30,3 +30,4 @@ yarn-error.log*
 # Archive build artifacts
 Archive/.next/
 Archive/node_modules/
+text.txt
