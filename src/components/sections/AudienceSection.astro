@@ -1,0 +1,33 @@
+---
+interface Props {
+  t: {
+    heading: string;
+    subheading: string;
+    segments: { title: string; description: string }[];
+  };
+}
+
+const { t } = Astro.props;
+---
+
+<section id="audience" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+        {t.heading}
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+        {t.subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.segments.map((segment) => (
+        <div class="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <h3 class="text-xl font-quicksand-medium text-foreground mb-2" style="font-weight:500;">{segment.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{segment.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
