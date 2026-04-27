@@ -112,6 +112,17 @@ export const translations = {
       paperLinkText: 'Read the Paper',
       paperLink: 'https://doi.org/10.3389/frobt.2025.1620609',
     },
+    featuredIn: {
+      heading: 'Backed by',
+      logos: [
+        {
+          src: 'https://github.com/user-attachments/assets/478e143c-d534-42ab-a8de-400f8d5b4b73',
+        },
+        {
+          src: 'https://github.com/user-attachments/assets/24464eb5-ff8b-475a-bbb9-a4d147177e26',
+        },
+      ],
+    },
     audience: {
       heading: 'Who It Is For',
       subheading: 'Built for organizations that need scalable, structured, and clinically responsible early screening.',
@@ -275,6 +286,17 @@ export const translations = {
       paperVenue: 'Ahmadi Majd et al., Frontiers in Robotics and AI (2025)',
       paperLinkText: 'Zur Publikation',
       paperLink: 'https://doi.org/10.3389/frobt.2025.1620609',
+    },
+    featuredIn: {
+      heading: 'Bekannt aus',
+      logos: [
+        {
+          src: 'https://github.com/user-attachments/assets/478e143c-d534-42ab-a8de-400f8d5b4b73',
+        },
+        {
+          src: 'https://github.com/user-attachments/assets/24464eb5-ff8b-475a-bbb9-a4d147177e26',
+        },
+      ],
     },
     audience: {
       heading: 'Fur wen es gedacht ist',
