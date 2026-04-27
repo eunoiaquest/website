@@ -113,15 +113,13 @@ export const translations = {
       paperLink: 'https://doi.org/10.3389/frobt.2025.1620609',
     },
     featuredIn: {
-      heading: 'Featured In',
+      heading: 'Backed by',
       logos: [
         {
           src: 'https://github.com/user-attachments/assets/478e143c-d534-42ab-a8de-400f8d5b4b73',
-          alt: 'Lift-Off 2024 startup competition visual',
         },
         {
           src: 'https://github.com/user-attachments/assets/24464eb5-ff8b-475a-bbb9-a4d147177e26',
-          alt: 'Hightech Inkubator Oldenburg logo',
         },
       ],
     },
@@ -294,11 +292,9 @@ export const translations = {
       logos: [
         {
           src: 'https://github.com/user-attachments/assets/478e143c-d534-42ab-a8de-400f8d5b4b73',
-          alt: 'Lift-Off 2024 Gründerwettbewerb Motiv',
         },
         {
           src: 'https://github.com/user-attachments/assets/24464eb5-ff8b-475a-bbb9-a4d147177e26',
-          alt: 'Hightech Inkubator Oldenburg Logo',
         },
       ],
     },
