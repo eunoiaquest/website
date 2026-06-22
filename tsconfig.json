@@ -15,5 +15,5 @@
     }
   },
   "include": ["src/**/*.ts", "src/**/*.astro"],
-  "exclude": ["node_modules", "dist", "Archive"]
+  "exclude": ["node_modules", "dist"]
 }

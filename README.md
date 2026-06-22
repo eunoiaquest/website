@@ -44,7 +44,3 @@ src/
   styles/
     global.css      CSS variables, Tailwind directives, base styles
 ```
-
-## Archive
-
-The `Archive/` folder contains the previous Next.js implementation for reference.
