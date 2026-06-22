@@ -1,8 +1,11 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AnalyticsConsent from '../components/AnalyticsConsent.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
 import { translations, type Lang } from '../i18n/translations';
+import { isHomePage, resolveHomeHref, resolveNavLinks } from '../lib/nav';
 
 interface Props {
   title?: string;
@@ -16,6 +19,10 @@ const {
   title = t.meta.title,
   description = t.meta.description,
 } = Astro.props;
+
+const onHomePage = isHomePage(Astro.url.pathname, lang);
+const navLinks = resolveNavLinks(t.header.nav, lang, onHomePage);
+const homeHref = resolveHomeHref(lang, onHomePage);
 ---
 
 <!doctype html>
@@ -30,15 +37,7 @@ const {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG64ENNJTY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YG64ENNJTY');
-    </script>
+    <AnalyticsConsent />
 
     <!-- Google Fonts: Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,10 +48,23 @@ const {
     />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
-    <Header navLinks={t.header.nav} langSwitcher={t.header.langSwitcher} menuOpenLabel={t.header.menuOpenLabel} menuCloseLabel={t.header.menuCloseLabel} />
+    <Header
+      navLinks={navLinks}
+      homeHref={homeHref}
+      langSwitcher={t.header.langSwitcher}
+      menuOpenLabel={t.header.menuOpenLabel}
+      menuCloseLabel={t.header.menuCloseLabel}
+    />
     <main>
       <slot />
     </main>
-    <Footer allRightsReserved={t.footer.allRightsReserved} address={t.footer.address} />
+    <Footer
+      allRightsReserved={t.footer.allRightsReserved}
+      address={t.footer.address}
+      privacyLabel={t.footer.privacy}
+      privacyHref={t.footer.privacyHref}
+      cookieSettingsLabel={t.footer.cookieSettings}
+    />
+    <CookieConsent t={t.cookie} privacyHref={t.footer.privacyHref} />
   </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 interface Props {
   navLinks: { href: string; label: string }[];
+  homeHref?: string;
   langSwitcher?: { label: string; href: string };
   menuOpenLabel?: string;
   menuCloseLabel?: string;
@@ -8,6 +9,7 @@ interface Props {
 
 const {
   navLinks,
+  homeHref = '#home',
   langSwitcher,
   menuOpenLabel = 'Open menu',
   menuCloseLabel = 'Close menu',
@@ -20,7 +22,7 @@ const {
 >
   <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
     <!-- Logo -->
-    <a href="#home" class="text-2xl font-quicksand-medium text-primary" style="font-weight:500;">
+    <a href={homeHref} class="text-2xl font-quicksand-medium text-primary" style="font-weight:500;">
       eunoia
     </a>
 
@@ -73,7 +75,7 @@ const {
     class="fixed top-0 right-0 z-50 h-full w-[250px] bg-background p-6 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
   >
     <div class="flex justify-between items-center mb-6">
-      <a href="#home" class="text-2xl font-quicksand-medium text-primary" style="font-weight:500;" data-close-menu>
+      <a href={homeHref} class="text-2xl font-quicksand-medium text-primary" style="font-weight:500;" data-close-menu>
         eunoia
       </a>
       <button
