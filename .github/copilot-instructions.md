@@ -85,6 +85,3 @@ Site URL pattern: `https://<org>.github.io/website/`
 - **Animation not triggering**: Check `AnimatedSection` and ensure parent has height. IntersectionObserver threshold is 0.1.
 - **Fonts not loading**: Verify Google Fonts `<link>` tags in `src/layouts/BaseLayout.astro`
 - **Build fails**: Run `npm run build` locally first. Check Astro docs for breaking changes.
-
-## Archive
-`Archive/` contains the previous Next.js implementation for reference (no AI code or Docker files — those were removed as unused).
