@@ -156,7 +156,6 @@ export const translations = {
       address: 'Göttingen, 37073, Lower Saxony',
       ctaText: 'Ready to transform your assessments? Reach out to our team directly.',
       ctaButton: 'Email Us',
-      mapPlaceholder: 'Map Placeholder',
     },
     blog: {
       title: 'Blog — eunoia Quest',
@@ -173,6 +172,48 @@ export const translations = {
     footer: {
       allRightsReserved: 'All rights reserved.',
       address: 'Göttingen, 37073, Lower Saxony',
+      privacy: 'Privacy Policy',
+      privacyHref: '/privacy/',
+      cookieSettings: 'Cookie settings',
+    },
+    cookie: {
+      title: 'Cookie preferences',
+      message:
+        'We use optional analytics cookies to understand how visitors use our website. You can accept or reject analytics cookies. ',
+      accept: 'Accept analytics',
+      reject: 'Reject',
+      privacyLink: 'Privacy Policy',
+    },
+    privacy: {
+      title: 'Privacy Policy',
+      description: 'How Eunoia Quest handles personal data on this website.',
+      lastUpdated: 'Last updated: June 22, 2026',
+      sections: [
+        {
+          heading: 'Controller',
+          body: 'Eunoia Quest\nGöttingen, 37073, Lower Saxony, Germany\nEmail: contact@eunoiaquest.com',
+        },
+        {
+          heading: 'What data we process on this website',
+          body: 'This marketing website does not require registration. We may process technical access data (such as IP address, browser type, and pages visited) only if you consent to analytics cookies.',
+        },
+        {
+          heading: 'Analytics (Google Analytics)',
+          body: 'If you accept analytics cookies, we use Google Analytics (Google Ireland Limited / Google LLC) to measure website usage. Google may process usage data using cookies or similar technologies. We load Google Analytics only after your consent. IP anonymization is enabled. Legal basis: Art. 6(1)(a) GDPR (consent). You can withdraw consent at any time via Cookie settings in the footer.',
+        },
+        {
+          heading: 'Cookies',
+          body: 'Essential cookies are not used for tracking. Analytics cookies are optional and are set only after consent. Your choice is stored locally in your browser (localStorage).',
+        },
+        {
+          heading: 'Your rights',
+          body: 'Under the GDPR, you have the right to access, rectify, erase, restrict processing, object, and data portability where applicable. You may also lodge a complaint with a supervisory authority. Contact us at contact@eunoiaquest.com for privacy requests.',
+        },
+        {
+          heading: 'Changes',
+          body: 'We may update this policy when our website or legal requirements change. The current version is always published on this page.',
+        },
+      ],
     },
   },
 
@@ -331,7 +372,6 @@ export const translations = {
       address: 'Göttingen, 37073, Niedersachsen',
       ctaText: 'Bereit, Ihre Assessments zu transformieren? Kontaktieren Sie unser Team direkt.',
       ctaButton: 'E-Mail senden',
-      mapPlaceholder: 'Kartenplatzhalter',
     },
     blog: {
       title: 'Blog — eunoia Quest',
@@ -348,6 +388,48 @@ export const translations = {
     footer: {
       allRightsReserved: 'Alle Rechte vorbehalten.',
       address: 'Göttingen, 37073, Niedersachsen',
+      privacy: 'Datenschutz',
+      privacyHref: '/de/datenschutz/',
+      cookieSettings: 'Cookie-Einstellungen',
+    },
+    cookie: {
+      title: 'Cookie-Einstellungen',
+      message:
+        'Wir verwenden optionale Analyse-Cookies, um zu verstehen, wie Besucher unsere Website nutzen. Sie können Analyse-Cookies akzeptieren oder ablehnen. ',
+      accept: 'Analyse akzeptieren',
+      reject: 'Ablehnen',
+      privacyLink: 'Datenschutzerklärung',
+    },
+    privacy: {
+      title: 'Datenschutzerklärung',
+      description: 'Wie Eunoia Quest personenbezogene Daten auf dieser Website verarbeitet.',
+      lastUpdated: 'Stand: 22. Juni 2026',
+      sections: [
+        {
+          heading: 'Verantwortlicher',
+          body: 'Eunoia Quest\nGöttingen, 37073, Niedersachsen, Deutschland\nE-Mail: contact@eunoiaquest.com',
+        },
+        {
+          heading: 'Welche Daten wir auf dieser Website verarbeiten',
+          body: 'Diese Marketing-Website erfordert keine Registrierung. Technische Zugriffsdaten (z. B. IP-Adresse, Browsertyp, besuchte Seiten) verarbeiten wir nur, wenn Sie Analyse-Cookies erlauben.',
+        },
+        {
+          heading: 'Analyse (Google Analytics)',
+          body: 'Wenn Sie Analyse-Cookies akzeptieren, nutzen wir Google Analytics (Google Ireland Limited / Google LLC), um die Website-Nutzung zu messen. Google kann Nutzungsdaten über Cookies oder ähnliche Technologien verarbeiten. Google Analytics wird erst nach Ihrer Einwilligung geladen. Die IP-Anonymisierung ist aktiviert. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre Einwilligung jederzeit über Cookie-Einstellungen im Footer widerrufen.',
+        },
+        {
+          heading: 'Cookies',
+          body: 'Es werden keine essenziellen Tracking-Cookies gesetzt. Analyse-Cookies sind optional und werden nur nach Einwilligung gesetzt. Ihre Auswahl wird lokal im Browser (localStorage) gespeichert.',
+        },
+        {
+          heading: 'Ihre Rechte',
+          body: 'Nach der DSGVO haben Sie Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit, soweit anwendbar. Sie können sich bei einer Aufsichtsbehörde beschweren. Datenschutzanfragen richten Sie bitte an contact@eunoiaquest.com.',
+        },
+        {
+          heading: 'Änderungen',
+          body: 'Wir können diese Erklärung aktualisieren, wenn sich unsere Website oder rechtliche Anforderungen ändern. Die jeweils aktuelle Version ist auf dieser Seite veröffentlicht.',
+        },
+      ],
     },
   },
 } as const;

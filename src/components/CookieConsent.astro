@@ -1,0 +1,137 @@
+---
+import { GA_MEASUREMENT_ID, CONSENT_STORAGE_KEY } from '../lib/analytics';
+
+interface Props {
+  t: {
+    title: string;
+    message: string;
+    accept: string;
+    reject: string;
+    privacyLink: string;
+  };
+  privacyHref: string;
+}
+
+const { t, privacyHref } = Astro.props;
+---
+
+<div
+  id="cookie-consent"
+  class="fixed bottom-0 inset-x-0 z-[100] hidden p-4 md:p-6"
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-message"
+  aria-live="polite"
+>
+  <div class="container mx-auto max-w-4xl rounded-lg border border-border bg-background p-5 md:p-6 shadow-lg">
+    <h2 id="cookie-consent-title" class="text-lg font-quicksand-medium text-foreground mb-2" style="font-weight:500;">
+      {t.title}
+    </h2>
+    <p id="cookie-consent-message" class="text-sm text-muted-foreground mb-4">
+      {t.message}
+      <a href={privacyHref} class="text-primary hover:underline">{t.privacyLink}</a>
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
+      <button
+        id="cookie-reject"
+        type="button"
+        class="inline-flex items-center justify-center rounded-md border border-border bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
+      >
+        {t.reject}
+      </button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+      >
+        {t.accept}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    measurementId: GA_MEASUREMENT_ID,
+    consentKey: CONSENT_STORAGE_KEY,
+  }}
+>
+  (function () {
+    const banner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+
+    if (!banner || !acceptBtn || !rejectBtn) return;
+
+    function hideBanner() {
+      banner.classList.add('hidden');
+      banner.setAttribute('aria-hidden', 'true');
+    }
+
+    function showBanner() {
+      banner.classList.remove('hidden');
+      banner.removeAttribute('aria-hidden');
+    }
+
+    function updateConsent(granted) {
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('consent', 'update', {
+        analytics_storage: granted ? 'granted' : 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+    }
+
+    function loadGoogleAnalytics() {
+      if (window.__eunoiaGaLoaded) return;
+      window.__eunoiaGaLoaded = true;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      document.head.appendChild(script);
+
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId, { anonymize_ip: true });
+    }
+
+    function acceptAnalytics() {
+      localStorage.setItem(consentKey, 'accepted');
+      updateConsent(true);
+      loadGoogleAnalytics();
+      hideBanner();
+    }
+
+    function rejectAnalytics() {
+      localStorage.setItem(consentKey, 'rejected');
+      updateConsent(false);
+      hideBanner();
+    }
+
+    function openCookieSettings() {
+      showBanner();
+    }
+
+    acceptBtn.addEventListener('click', acceptAnalytics);
+    rejectBtn.addEventListener('click', rejectAnalytics);
+
+    document.getElementById('cookie-settings-btn')?.addEventListener('click', openCookieSettings);
+    window.eunoiaOpenCookieSettings = openCookieSettings;
+
+    const stored = localStorage.getItem(consentKey);
+    if (stored === 'accepted') {
+      updateConsent(true);
+      loadGoogleAnalytics();
+      return;
+    }
+
+    if (stored === 'rejected') {
+      updateConsent(false);
+      return;
+    }
+
+    showBanner();
+  })();
+</script>
