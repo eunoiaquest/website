@@ -5,8 +5,9 @@ interface Props {
     subtitle: string;
     cta: string;
   };
+  ctaHref?: string;
 }
-const { t } = Astro.props;
+const { t, ctaHref = '#contact' } = Astro.props;
 ---
 
 <section
@@ -22,7 +23,7 @@ const { t } = Astro.props;
     </p>
     <div class="mt-10 flex justify-center">
       <a
-        href="#contact"
+        href={ctaHref}
         class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
       >
         {t.cta}

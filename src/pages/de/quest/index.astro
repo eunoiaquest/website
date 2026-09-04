@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AnimatedSection from '../../../components/AnimatedSection.astro';
+import HeroSection from '../../../components/sections/HeroSection.astro';
+import ProblemSection from '../../../components/sections/ProblemSection.astro';
+import AboutSection from '../../../components/sections/AboutSection.astro';
+import FeaturesSection from '../../../components/sections/FeaturesSection.astro';
+import HowItWorksSection from '../../../components/sections/HowItWorksSection.astro';
+import ScienceSection from '../../../components/sections/ScienceSection.astro';
+import AudienceSection from '../../../components/sections/AudienceSection.astro';
+import ContactSection from '../../../components/sections/ContactSection.astro';
+import { translations } from '../../../i18n/translations';
+
+const t = translations.de;
+---
+
+<BaseLayout lang="de" title={t.quest.meta.title} description={t.quest.meta.description}>
+  <AnimatedSection animation="fade-in">
+    <HeroSection t={t.quest.hero} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <ProblemSection t={t.quest.problem} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <AboutSection t={t.quest.about} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <FeaturesSection t={t.quest.features} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <HowItWorksSection t={t.quest.howItWorks} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <ScienceSection t={t.quest.science} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <AudienceSection t={t.quest.audience} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <ContactSection t={t.contact} />
+  </AnimatedSection>
+</BaseLayout>
