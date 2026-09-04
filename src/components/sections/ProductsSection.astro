@@ -1,0 +1,64 @@
+---
+interface Props {
+  t: {
+    heading: string;
+    subheading: string;
+    items: { name: string; tagline: string; description: string; href: string; cta: string }[];
+  };
+}
+const { t } = Astro.props;
+
+// Icons stay in component (SVG paths from Lucide)
+const productIcons = [
+  // Gamepad2 icon
+  '<line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>',
+  // Compass icon
+  '<circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>',
+];
+---
+
+<section id="products" class="py-16 md:py-24 bg-secondary">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+        {t.heading}
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        {t.subheading}
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {t.items.map((item, i) => (
+        <a
+          href={item.href}
+          class="group bg-card text-card-foreground rounded-lg border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col p-8"
+        >
+          <div class="mb-4 p-3 rounded-full bg-primary/10 text-primary w-fit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              set:html={productIcons[i]}
+            />
+          </div>
+          <h3 class="text-2xl font-quicksand-medium text-foreground" style="font-weight:500;">{item.name}</h3>
+          <p class="mt-1 text-sm font-quicksand-medium text-primary" style="font-weight:500;">{item.tagline}</p>
+          <p class="mt-4 text-muted-foreground leading-relaxed flex-grow">{item.description}</p>
+          <span class="mt-6 inline-flex items-center gap-1 text-primary font-quicksand-medium group-hover:underline" style="font-weight:500;">
+            {item.cta}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
