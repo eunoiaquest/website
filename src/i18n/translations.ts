@@ -28,8 +28,8 @@ export const translations = {
     },
     home: {
       hero: {
-        title: 'We build tools that train the skills school forgot',
-        subtitle: 'eunoia creates gamified products that turn emotional and mental skills into something you practice, not just read about.',
+        title: 'Gamified software built on the science of emotion regulation.',
+        subtitle: 'eunoia Quest screens for mental health conditions. Taktiks teaches you how to manage your own emotions. Both are built on the same research.',
         cta: 'Explore Our Products',
       },
       products: {
@@ -53,8 +53,6 @@ export const translations = {
         ],
       },
       about: {
-        heading: 'Our Mission',
-        body: "We started eunoia to close the gap between what science knows about the mind and what people actually get to practice. Emotional and mental skills shape how we work, learn, and relate to each other — yet most tools only let you read about them or track them passively.",
         foundingStoryTitle: 'How We Started',
         foundingStoryBody: "eunoia grew out of academic research at the University of Göttingen. What began as a single master's thesis on gamified mental health screening — refined through the Lift-Off startup competition — has since grown into a small family of products, each turning a hard-to-teach skill into something people can actually train.",
         learnMore: 'Meet the team',
@@ -394,8 +392,8 @@ export const translations = {
     },
     home: {
       hero: {
-        title: 'Wir entwickeln Werkzeuge für Fähigkeiten, die die Schule vergessen hat',
-        subtitle: 'eunoia entwickelt spielerische Produkte, die emotionale und mentale Fähigkeiten trainierbar machen – statt sie nur zu beschreiben.',
+        title: 'Spielerische Software, die auf der Wissenschaft der Emotionsregulation basiert.',
+        subtitle: 'eunoia Quest screent auf psychische Gesundheitszustände. Taktiks lehrt dich, deine eigenen Emotionen zu steuern. Beide basieren auf derselben Forschung.',
         cta: 'Unsere Produkte entdecken',
       },
       products: {
@@ -419,8 +417,6 @@ export const translations = {
         ],
       },
       about: {
-        heading: 'Unsere Mission',
-        body: 'Wir haben eunoia gegründet, um die Lücke zwischen dem, was die Wissenschaft über den Geist weiß, und dem, was Menschen tatsächlich üben können, zu schließen. Emotionale und mentale Fähigkeiten prägen, wie wir arbeiten, lernen und miteinander umgehen — doch die meisten Tools lassen uns darüber nur lesen oder sie passiv verfolgen.',
         foundingStoryTitle: 'Unsere Entstehung',
         foundingStoryBody: 'eunoia entstand aus akademischer Forschung an der Universität Göttingen. Was als eine einzelne Masterarbeit über spielbasiertes psychisches Gesundheitsscreening begann — verfeinert im Lift-Off Startup-Wettbewerb — ist inzwischen zu einer kleinen Produktfamilie gewachsen, die jeweils eine schwer vermittelbare Fähigkeit trainierbar macht.',
         learnMore: 'Team kennenlernen',
