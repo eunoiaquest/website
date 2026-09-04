@@ -1,35 +1,51 @@
 ---
 interface Props {
   t: {
-    heading: string;
-    body: string;
+    heading?: string;
+    body?: string;
     foundingStoryTitle: string;
     foundingStoryBody: string;
     learnMore: string;
     imageAlt: string;
   };
+  hideMission?: boolean;
 }
-const { t } = Astro.props;
+const { t, hideMission = false } = Astro.props;
 ---
 
 <section id="about" class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto">
       <div class="space-y-6">
-        <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
-          {t.heading}
-        </h2>
-        <p class="text-lg text-muted-foreground leading-relaxed">
-          {t.body}
-        </p>
-        <div class="rounded-lg border border-border bg-secondary/40 p-5">
-          <h3 class="text-xl font-quicksand-medium text-foreground mb-2" style="font-weight:500;">
-            {t.foundingStoryTitle}
-          </h3>
-          <p class="text-base text-muted-foreground leading-relaxed">
-            {t.foundingStoryBody}
-          </p>
-        </div>
+        {!hideMission && (
+          <>
+            <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+              {t.heading}
+            </h2>
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              {t.body}
+            </p>
+          </>
+        )}
+        {hideMission ? (
+          <>
+            <h2 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl" style="font-weight:500;">
+              {t.foundingStoryTitle}
+            </h2>
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              {t.foundingStoryBody}
+            </p>
+          </>
+        ) : (
+          <div class="rounded-lg border border-border bg-secondary/40 p-5">
+            <h3 class="text-xl font-quicksand-medium text-foreground mb-2" style="font-weight:500;">
+              {t.foundingStoryTitle}
+            </h3>
+            <p class="text-base text-muted-foreground leading-relaxed">
+              {t.foundingStoryBody}
+            </p>
+          </div>
+        )}
         <a href="#about" class="text-primary hover:underline transition-colors inline-block">
           {t.learnMore}
         </a>

@@ -2,35 +2,40 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AnimatedSection from '../../components/AnimatedSection.astro';
 import HeroSection from '../../components/sections/HeroSection.astro';
-import ProductsSection from '../../components/sections/ProductsSection.astro';
+import ProblemSection from '../../components/sections/ProblemSection.astro';
 import AboutSection from '../../components/sections/AboutSection.astro';
-import FeaturedInSection from '../../components/sections/FeaturedInSection.astro';
-import TeamSection from '../../components/sections/TeamSection.astro';
+import FeaturesSection from '../../components/sections/FeaturesSection.astro';
+import HowItWorksSection from '../../components/sections/HowItWorksSection.astro';
+import AudienceSection from '../../components/sections/AudienceSection.astro';
 import ContactSection from '../../components/sections/ContactSection.astro';
 import { translations } from '../../i18n/translations';
 
-const t = translations.de;
+const t = translations.en;
 ---
 
-<BaseLayout lang="de" title={t.meta.title} description={t.meta.description}>
+<BaseLayout lang="en" title={t.taktiks.meta.title} description={t.taktiks.meta.description}>
   <AnimatedSection animation="fade-in">
-    <HeroSection t={t.home.hero} ctaHref="#products" />
+    <HeroSection t={t.taktiks.hero} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <ProductsSection t={t.home.products} />
+    <ProblemSection t={t.taktiks.problem} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <AboutSection t={t.home.about} hideMission />
+    <AboutSection t={t.taktiks.about} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <FeaturedInSection t={t.home.featuredIn} />
+    <FeaturesSection t={t.taktiks.features} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <TeamSection t={t.home.team} />
+    <HowItWorksSection t={t.taktiks.howItWorks} />
+  </AnimatedSection>
+
+  <AnimatedSection animation="slide-up">
+    <AudienceSection t={t.taktiks.audience} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">

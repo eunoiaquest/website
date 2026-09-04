@@ -2,13 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedSection from '../components/AnimatedSection.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
-import ProblemSection from '../components/sections/ProblemSection.astro';
+import ProductsSection from '../components/sections/ProductsSection.astro';
 import AboutSection from '../components/sections/AboutSection.astro';
-import FeaturesSection from '../components/sections/FeaturesSection.astro';
-import HowItWorksSection from '../components/sections/HowItWorksSection.astro';
-import ScienceSection from '../components/sections/ScienceSection.astro';
 import FeaturedInSection from '../components/sections/FeaturedInSection.astro';
-import AudienceSection from '../components/sections/AudienceSection.astro';
 import TeamSection from '../components/sections/TeamSection.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
 import { translations } from '../i18n/translations';
@@ -18,39 +14,23 @@ const t = translations.en;
 
 <BaseLayout lang="en" title={t.meta.title} description={t.meta.description}>
   <AnimatedSection animation="fade-in">
-    <HeroSection t={t.hero} />
+    <HeroSection t={t.home.hero} ctaHref="#products" />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <ProblemSection t={t.problem} />
+    <ProductsSection t={t.home.products} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <AboutSection t={t.about} />
+    <AboutSection t={t.home.about} hideMission />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <FeaturesSection t={t.features} />
+    <FeaturedInSection t={t.home.featuredIn} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
-    <HowItWorksSection t={t.howItWorks} />
-  </AnimatedSection>
-
-  <AnimatedSection animation="slide-up">
-    <ScienceSection t={t.science} />
-  </AnimatedSection>
-
-  <AnimatedSection animation="slide-up">
-    <FeaturedInSection t={t.featuredIn} />
-  </AnimatedSection>
-
-  <AnimatedSection animation="slide-up">
-    <AudienceSection t={t.audience} />
-  </AnimatedSection>
-
-  <AnimatedSection animation="slide-up">
-    <TeamSection t={t.team} />
+    <TeamSection t={t.home.team} />
   </AnimatedSection>
 
   <AnimatedSection animation="slide-up">
