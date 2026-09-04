@@ -2,6 +2,7 @@
 interface Props {
   navLinks: { href: string; label: string }[];
   homeHref?: string;
+  products?: { label: string; items: { href: string; label: string }[] };
   langSwitcher?: { label: string; href: string };
   menuOpenLabel?: string;
   menuCloseLabel?: string;
@@ -10,10 +11,14 @@ interface Props {
 const {
   navLinks,
   homeHref = '#home',
+  products,
   langSwitcher,
   menuOpenLabel = 'Open menu',
   menuCloseLabel = 'Close menu',
 } = Astro.props;
+
+// The first nav link is always "Home"; the Products dropdown is rendered right after it.
+const [homeLink, ...restNavLinks] = navLinks;
 ---
 
 <header
@@ -28,7 +33,42 @@ const {
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center space-x-6">
-      {navLinks.map((link) => (
+      {homeLink && (
+        <a
+          href={homeLink.href}
+          class="text-sm font-quicksand-medium text-foreground hover:text-primary transition-colors"
+          style="font-weight:500;"
+        >
+          {homeLink.label}
+        </a>
+      )}
+      {products && (
+        <div class="relative group">
+          <button
+            type="button"
+            class="inline-flex items-center gap-1 text-sm font-quicksand-medium text-foreground hover:text-primary transition-colors"
+            style="font-weight:500;"
+          >
+            {products.label}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block">
+            <div class="rounded-md border border-border bg-background shadow-lg py-2 min-w-[160px]">
+              {products.items.map((item) => (
+                <a
+                  href={item.href}
+                  class="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      {restNavLinks.map((link) => (
         <a
           href={link.href}
           class="text-sm font-quicksand-medium text-foreground hover:text-primary transition-colors"
@@ -91,7 +131,32 @@ const {
       </button>
     </div>
     <nav class="flex flex-col space-y-4">
-      {navLinks.map((link) => (
+      {homeLink && (
+        <a
+          href={homeLink.href}
+          class="text-lg font-quicksand-medium text-foreground hover:text-primary transition-colors"
+          style="font-weight:500;"
+          data-close-menu
+        >
+          {homeLink.label}
+        </a>
+      )}
+      {products && (
+        <div class="flex flex-col space-y-2">
+          <span class="text-sm text-muted-foreground uppercase tracking-wide">{products.label}</span>
+          {products.items.map((item) => (
+            <a
+              href={item.href}
+              class="text-lg font-quicksand-medium text-foreground hover:text-primary transition-colors pl-2"
+              style="font-weight:500;"
+              data-close-menu
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
+      {restNavLinks.map((link) => (
         <a
           href={link.href}
           class="text-lg font-quicksand-medium text-foreground hover:text-primary transition-colors"
