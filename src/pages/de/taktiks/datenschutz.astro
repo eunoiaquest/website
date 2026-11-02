@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { translations } from '../../../i18n/translations';
+
+const t = translations.de.taktiks.privacy;
+---
+
+<BaseLayout lang="de" title={t.meta.title} description={t.meta.description}>
+  <section class="py-16 md:py-24 bg-background">
+    <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+      <h1 class="text-3xl font-quicksand-medium text-foreground sm:text-4xl mb-2" style="font-weight:500;">
+        {t.title}
+      </h1>
+      <p class="text-sm text-muted-foreground italic mb-10">{t.effective}</p>
+
+      <div class="space-y-8">
+        {t.sections.map((section) => {
+          const [before, after] = section.body.split('{email}');
+          return (
+            <section>
+              <h2 class="text-xl font-quicksand-medium text-foreground mb-3" style="font-weight:500;">
+                {section.heading}
+              </h2>
+              <p class="text-muted-foreground leading-relaxed">
+                {before}
+                {section.email && (
+                  <a href={`mailto:${section.email}`} class="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">
+                    {section.email}
+                  </a>
+                )}
+                {after}
+              </p>
+            </section>
+          );
+        })}
+      </div>
+
+      <p class="text-sm text-muted-foreground italic mt-12">{t.disclaimer}</p>
+    </div>
+  </section>
+</BaseLayout>
