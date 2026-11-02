@@ -195,6 +195,58 @@ export const translations = {
       },
     },
     taktiks: {
+      privacy: {
+        meta: {
+          title: 'Taktik Privacy Policy — eunoia Quest',
+          description: 'How the Taktik app handles information: no accounts, progress stays on your device, and only what you choose to send leaves it.',
+        },
+        title: 'Privacy Policy',
+        effective: 'Effective 2 November 2026',
+        sections: [
+          {
+            heading: 'Overview',
+            body: 'Taktik is an educational game about emotion regulation. We designed it to play entirely on your device. This policy explains what the app does and does not do with information. It applies to the Taktik app provided by Eunoia Quest.',
+          },
+          {
+            heading: 'Information we collect',
+            body: 'Taktik has no accounts and no sign-in, and you never need to give your name, email or any other personal details to play. We do not collect advertising identifiers, and we do not track your activity across other apps or websites. The only information that leaves your device is what you choose to send us, described below.',
+          },
+          {
+            heading: 'Reporting a concern',
+            body: 'If you use “Report a concern” in a scenario, we receive the category you pick, anything you write, which scenario and screen you were on, and the app language, app version, device locale and iOS version. Reports are stored on a server in the EU and used only to fix and improve the content. Please don’t include personal details in your note.',
+          },
+          {
+            heading: 'Beta test',
+            body: 'This is a beta version. Taking part means agreeing that the app sends which scenarios you start and finish, the options you pick, how long screens take, and your app language, device locale, iOS and app version, together with a random ID created for this installation. Survey answers are sent when you submit them. The final survey also asks, optionally, for your age range. All of it is stored on a server in the EU, used only to evaluate and improve Taktik, and deleted after the beta. To stop taking part, delete the app; to have your data deleted, contact us quoting the ID shown in Settings.',
+          },
+          {
+            heading: 'Your progress stays on your device',
+            body: 'The app remembers which scenarios you have played so it can show your progress on the map. This progress is stored locally on your device and is not sent to us or to any server. Taktik does not require a network connection to play.',
+          },
+          {
+            heading: 'Narration',
+            body: 'Spoken narration is produced on your device using your system’s text-to-speech voices, or from audio bundled with the app. No microphone is used and no audio is recorded or sent anywhere.',
+          },
+          {
+            heading: 'Children and educational use',
+            body: 'Taktik is a learning tool suitable for a general audience. Playing needs no personal information, and we do not knowingly collect personal information from children.',
+          },
+          {
+            heading: 'Your choices and data retention',
+            body: 'Your progress lives only on your device. You can remove it at any time by clearing the app’s data or deleting the app, which permanently removes the stored progress from that device.',
+          },
+          {
+            heading: 'Changes to this policy',
+            body: 'If we change how the app handles information, we will update this policy and revise the effective date above.',
+          },
+          {
+            heading: 'Contact',
+            body: 'If you have questions about this policy, contact us at {email}.',
+            email: 'contact@eunoiaquest.com',
+          },
+        ],
+        disclaimer: 'Taktik is an educational game about emotion regulation; not therapy or medical advice.',
+      },
       meta: {
         title: 'Taktiks — The skill no one teaches us',
         description: 'Rehearse real emotional situations, choose a strategy, and learn what actually helps. Taktiks trains emotional resilience like a skill.',
@@ -559,6 +611,58 @@ export const translations = {
       },
     },
     taktiks: {
+      privacy: {
+        meta: {
+          title: 'Taktik Datenschutzerklärung — eunoia Quest',
+          description: 'Wie die Taktik-App mit Informationen umgeht: keine Konten, dein Fortschritt bleibt auf deinem Gerät, und nur was du selbst sendest, verlässt es.',
+        },
+        title: 'Datenschutzerklärung',
+        effective: 'Gültig ab 2. November 2026',
+        sections: [
+          {
+            heading: 'Überblick',
+            body: 'Taktik ist ein Lernspiel über Emotionsregulation. Wir haben es so gestaltet, dass es vollständig auf deinem Gerät gespielt wird. Diese Erklärung beschreibt, was die App mit Informationen tut und was nicht. Sie gilt für die Taktik-App, bereitgestellt von Eunoia Quest.',
+          },
+          {
+            heading: 'Informationen, die wir erfassen',
+            body: 'Taktik hat keine Konten und keine Anmeldung, und zum Spielen musst du weder deinen Namen noch deine E-Mail-Adresse oder andere persönliche Angaben machen. Wir erfassen keine Werbekennungen und verfolgen deine Aktivität nicht über andere Apps oder Websites hinweg. Dein Gerät verlässt nur, was du uns selbst schickst — siehe unten.',
+          },
+          {
+            heading: 'Bedenken melden',
+            body: 'Wenn du in einem Szenario „Bedenken melden“ nutzt, erhalten wir die gewählte Kategorie, was du schreibst, in welchem Szenario und auf welchem Bildschirm du warst, sowie App-Sprache, App-Version, Gerätesprache/-region und iOS-Version. Meldungen werden auf einem Server in der EU gespeichert und nur genutzt, um die Inhalte zu korrigieren und zu verbessern. Bitte gib in deiner Nachricht keine persönlichen Daten an.',
+          },
+          {
+            heading: 'Betatest',
+            body: 'Dies ist eine Betaversion. Mit der Teilnahme stimmst du zu, dass die App sendet, welche Szenarien du beginnst und abschließt, welche Optionen du wählst, wie lange Bildschirme dauern, sowie App-Sprache, Gerätesprache/-region, iOS- und App-Version — zusammen mit einer zufälligen ID, die für diese Installation erstellt wurde. Antworten auf Umfragen werden gesendet, wenn du sie abschickst. Die Abschlussumfrage fragt außerdem freiwillig nach deiner Altersgruppe. Alles wird auf einem Server in der EU gespeichert, nur zur Auswertung und Verbesserung von Taktik genutzt und nach der Beta gelöscht. Um die Teilnahme zu beenden, lösche die App; um deine Daten löschen zu lassen, kontaktiere uns mit der ID aus den Einstellungen.',
+          },
+          {
+            heading: 'Dein Fortschritt bleibt auf deinem Gerät',
+            body: 'Die App merkt sich, welche Szenarien du gespielt hast, um deinen Fortschritt auf der Karte anzuzeigen. Dieser Fortschritt wird lokal auf deinem Gerät gespeichert und nicht an uns oder an einen Server gesendet. Taktik benötigt zum Spielen keine Internetverbindung.',
+          },
+          {
+            heading: 'Erzählung',
+            body: 'Die gesprochene Erzählung wird auf deinem Gerät mit den Text-zu-Sprache-Stimmen deines Systems oder aus in der App enthaltenen Audiodateien erzeugt. Es wird kein Mikrofon verwendet und kein Ton aufgezeichnet oder irgendwohin gesendet.',
+          },
+          {
+            heading: 'Kinder und Bildungseinsatz',
+            body: 'Taktik ist ein Lernwerkzeug, das für ein allgemeines Publikum geeignet ist. Zum Spielen sind keine personenbezogenen Daten nötig, und wir erfassen wissentlich keine personenbezogenen Daten von Kindern.',
+          },
+          {
+            heading: 'Deine Wahlmöglichkeiten und Datenspeicherung',
+            body: 'Dein Fortschritt existiert nur auf deinem Gerät. Du kannst ihn jederzeit entfernen, indem du die Daten der App löschst oder die App deinstallierst — dadurch wird der gespeicherte Fortschritt dauerhaft von diesem Gerät entfernt.',
+          },
+          {
+            heading: 'Änderungen an dieser Erklärung',
+            body: 'Wenn wir ändern, wie die App mit Informationen umgeht, aktualisieren wir diese Erklärung und passen das oben genannte Datum des Inkrafttretens an.',
+          },
+          {
+            heading: 'Kontakt',
+            body: 'Wenn du Fragen zu dieser Erklärung hast, kontaktiere uns unter {email}.',
+            email: 'contact@eunoiaquest.com',
+          },
+        ],
+        disclaimer: 'Taktik ist ein Lernspiel über Emotionsregulation — keine Therapie und keine medizinische Beratung.',
+      },
       meta: {
         title: 'Taktiks — Die Fähigkeit, die uns niemand lehrt',
         description: 'Reale emotionale Situationen durchspielen, eine Strategie wählen und lernen, was wirklich hilft. Taktiks macht emotionale Resilienz trainierbar.',
