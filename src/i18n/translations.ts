@@ -201,7 +201,7 @@ export const translations = {
           description: 'How the Taktik app handles information: no accounts, progress stays on your device, and only what you choose to send leaves it.',
         },
         title: 'Privacy Policy',
-        effective: 'Effective 2 November 2026',
+        effective: 'Effective 6 November 2026',
         sections: [
           {
             heading: 'Overview',
@@ -209,19 +209,19 @@ export const translations = {
           },
           {
             heading: 'Information we collect',
-            body: 'Taktik has no accounts and no sign-in, and you never need to give your name, email or any other personal details to play. We do not collect advertising identifiers, and we do not track your activity across other apps or websites. The only information that leaves your device is what you choose to send us, described below.',
+            body: 'Taktik has no accounts, no sign-in, and does not require your name, email, or any other personal details. We do not collect advertising identifiers, and we do not track your activity across other apps or websites. What leaves your device is described below.',
           },
           {
             heading: 'Reporting a concern',
             body: 'If you use “Report a concern” in a scenario, we receive the category you pick, anything you write, which scenario and screen you were on, and the app language, app version, device locale and iOS version. Reports are stored on a server in the EU and used only to fix and improve the content. Please don’t include personal details in your note.',
           },
           {
-            heading: 'Beta test',
-            body: 'This is a beta version. Taking part means agreeing that the app sends which scenarios you start and finish, the options you pick, how long screens take, and your app language, device locale, iOS and app version, together with a random ID created for this installation. Survey answers are sent when you submit them. The final survey also asks, optionally, for your age range. All of it is stored on a server in the EU, used only to evaluate and improve Taktik, and deleted after the beta. To stop taking part, delete the app; to have your data deleted, contact us quoting the ID shown in Settings.',
+            heading: 'Usage data',
+            body: 'If you allow it, on first launch or later in Settings, the app sends which scenarios and screens you reach, how long screens take, and your app language, device locale, iOS and app version, together with a random ID created for this installation. It never sends which options you pick. While you share usage data, the same ID is attached to concern reports and survey answers. Survey answers, including your age range if you give it, are sent when you submit them, whether or not you share usage data. All of it is stored on a server in the EU, used only to evaluate and improve Taktik, and deleted once we no longer need it for that. To stop sharing, turn off “Share usage data” in Settings, which also removes the random ID from your device. To have your data deleted, first send us a request through “Report a concern” in any scenario while sharing is still on: it carries the random ID, so we can find your data.',
           },
           {
-            heading: 'Your progress stays on your device',
-            body: 'The app remembers which scenarios you have played so it can show your progress on the map. This progress is stored locally on your device and is not sent to us or to any server. Taktik does not require a network connection to play.',
+            heading: 'Your progress',
+            body: 'The app remembers which scenarios you have played so it can show your progress on the map. This record is stored locally on your device, and Taktik does not require a network connection to play.',
           },
           {
             heading: 'Narration',
@@ -229,11 +229,11 @@ export const translations = {
           },
           {
             heading: 'Children and educational use',
-            body: 'Taktik is a learning tool suitable for a general audience. Playing needs no personal information, and we do not knowingly collect personal information from children.',
+            body: 'Taktik is a learning tool suitable for a general audience. We do not knowingly collect personal information from children.',
           },
           {
             heading: 'Your choices and data retention',
-            body: 'Your progress lives only on your device. You can remove it at any time by clearing the app’s data or deleting the app, which permanently removes the stored progress from that device.',
+            body: 'Your saved progress lives on your device. You can remove it at any time by clearing the app’s data or deleting the app, which permanently removes the stored progress from that device.',
           },
           {
             heading: 'Changes to this policy',
@@ -617,7 +617,7 @@ export const translations = {
           description: 'Wie die Taktik-App mit Informationen umgeht: keine Konten, dein Fortschritt bleibt auf deinem Gerät, und nur was du selbst sendest, verlässt es.',
         },
         title: 'Datenschutzerklärung',
-        effective: 'Gültig ab 2. November 2026',
+        effective: 'Gültig ab 6. November 2026',
         sections: [
           {
             heading: 'Überblick',
@@ -625,19 +625,19 @@ export const translations = {
           },
           {
             heading: 'Informationen, die wir erfassen',
-            body: 'Taktik hat keine Konten und keine Anmeldung, und zum Spielen musst du weder deinen Namen noch deine E-Mail-Adresse oder andere persönliche Angaben machen. Wir erfassen keine Werbekennungen und verfolgen deine Aktivität nicht über andere Apps oder Websites hinweg. Dein Gerät verlässt nur, was du uns selbst schickst — siehe unten.',
+            body: 'Taktik hat keine Konten, keine Anmeldung und verlangt weder deinen Namen, deine E-Mail-Adresse noch andere persönliche Angaben. Wir erfassen keine Werbekennungen und verfolgen deine Aktivität nicht über andere Apps oder Websites hinweg. Was dein Gerät verlässt, steht weiter unten.',
           },
           {
             heading: 'Bedenken melden',
             body: 'Wenn du in einem Szenario „Bedenken melden“ nutzt, erhalten wir die gewählte Kategorie, was du schreibst, in welchem Szenario und auf welchem Bildschirm du warst, sowie App-Sprache, App-Version, Gerätesprache/-region und iOS-Version. Meldungen werden auf einem Server in der EU gespeichert und nur genutzt, um die Inhalte zu korrigieren und zu verbessern. Bitte gib in deiner Nachricht keine persönlichen Daten an.',
           },
           {
-            heading: 'Betatest',
-            body: 'Dies ist eine Betaversion. Mit der Teilnahme stimmst du zu, dass die App sendet, welche Szenarien du beginnst und abschließt, welche Optionen du wählst, wie lange Bildschirme dauern, sowie App-Sprache, Gerätesprache/-region, iOS- und App-Version — zusammen mit einer zufälligen ID, die für diese Installation erstellt wurde. Antworten auf Umfragen werden gesendet, wenn du sie abschickst. Die Abschlussumfrage fragt außerdem freiwillig nach deiner Altersgruppe. Alles wird auf einem Server in der EU gespeichert, nur zur Auswertung und Verbesserung von Taktik genutzt und nach der Beta gelöscht. Um die Teilnahme zu beenden, lösche die App; um deine Daten löschen zu lassen, kontaktiere uns mit der ID aus den Einstellungen.',
+            heading: 'Nutzungsdaten',
+            body: 'Wenn du es erlaubst, beim ersten Start oder später in den Einstellungen, sendet die App, welche Szenarien und Bildschirme du erreichst, wie lange Bildschirme dauern, sowie App-Sprache, Gerätesprache/-region, iOS- und App-Version, zusammen mit einer zufälligen ID, die für diese Installation erstellt wurde. Sie sendet nie, welche Optionen du wählst. Solange du Nutzungsdaten teilst, wird dieselbe ID an Meldungen und Umfrageantworten angehängt. Antworten auf Umfragen, auch deine Altersgruppe, falls du sie angibst, werden gesendet, wenn du sie abschickst, unabhängig davon, ob du Nutzungsdaten teilst. Alles wird auf einem Server in der EU gespeichert, nur zur Auswertung und Verbesserung von Taktik genutzt und gelöscht, sobald wir es dafür nicht mehr brauchen. Um das Teilen zu beenden, schalte „Nutzungsdaten teilen“ in den Einstellungen aus; dadurch wird auch die zufällige ID von deinem Gerät entfernt. Wenn wir deine Daten löschen sollen, schick uns vorher, solange das Teilen noch eingeschaltet ist, eine Anfrage über „Bedenken melden“ in einem Szenario: Sie enthält die zufällige ID, damit wir deine Daten finden.',
           },
           {
-            heading: 'Dein Fortschritt bleibt auf deinem Gerät',
-            body: 'Die App merkt sich, welche Szenarien du gespielt hast, um deinen Fortschritt auf der Karte anzuzeigen. Dieser Fortschritt wird lokal auf deinem Gerät gespeichert und nicht an uns oder an einen Server gesendet. Taktik benötigt zum Spielen keine Internetverbindung.',
+            heading: 'Dein Fortschritt',
+            body: 'Die App merkt sich, welche Szenarien du gespielt hast, um deinen Fortschritt auf der Karte anzuzeigen. Diese Aufzeichnung wird lokal auf deinem Gerät gespeichert, und Taktik benötigt zum Spielen keine Internetverbindung.',
           },
           {
             heading: 'Erzählung',
@@ -645,11 +645,11 @@ export const translations = {
           },
           {
             heading: 'Kinder und Bildungseinsatz',
-            body: 'Taktik ist ein Lernwerkzeug, das für ein allgemeines Publikum geeignet ist. Zum Spielen sind keine personenbezogenen Daten nötig, und wir erfassen wissentlich keine personenbezogenen Daten von Kindern.',
+            body: 'Taktik ist ein Lernwerkzeug, das für ein allgemeines Publikum geeignet ist. Wir erheben wissentlich keine personenbezogenen Daten von Kindern.',
           },
           {
             heading: 'Deine Wahlmöglichkeiten und Datenspeicherung',
-            body: 'Dein Fortschritt existiert nur auf deinem Gerät. Du kannst ihn jederzeit entfernen, indem du die Daten der App löschst oder die App deinstallierst — dadurch wird der gespeicherte Fortschritt dauerhaft von diesem Gerät entfernt.',
+            body: 'Dein gespeicherter Fortschritt liegt auf deinem Gerät. Du kannst ihn jederzeit entfernen, indem du die Daten der App löschst oder die App deinstallierst, dadurch wird der gespeicherte Fortschritt dauerhaft von diesem Gerät entfernt.',
           },
           {
             heading: 'Änderungen an dieser Erklärung',
